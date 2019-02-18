@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+html {
+    font-family: Nunito,sans-serif;
+}
+
 body {
     margin: 0;
 }
@@ -10,16 +14,21 @@ li {
     list-style: none;
 }
 
+.title {
+    padding-top: 2rem;
+    margin: 0;
+}
+
 .todo-form {
     text-align: center;
+    background-color: lightskyblue;
 }
 
 .top-row {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightskyblue;
-    height: 10rem
+    height: 8rem
 }
 
 .wrapper {
@@ -77,7 +86,9 @@ li {
 
 .complete {
     background-color: rgb(144, 238, 144, 0.8);
+    text-decoration: line-through;
 }
+
 
 /* .complete .done {
     display: inline;
@@ -94,7 +105,9 @@ li {
     font-size: 1.5rem;
     width: 4rem;
     cursor: pointer;
+   
 }
+
 
 .remove-button:hover {
     background-color: rgb(0, 0, 0, 0.2);
