@@ -57,4 +57,10 @@ addButton.addEventListener('click', addItem);
 todoList.addEventListener('click', removeItem);
 todoList.addEventListener('click', markChecked);
 
+todoInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') {
+        addItem();
+    }
+});
+
 
