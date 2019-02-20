@@ -14,7 +14,7 @@ const addItem = () => {
     }
     let todoItem = todoInput.value;
 
-    todoList.innerHTML += `<li class="list-item">${todoItem}<span class="done">DONE</span><button type="button" class=remove-button>X</button></li>`;
+    todoList.innerHTML += `<li class="list-item"><p>${todoItem}</p><span class="done">DONE</span><button type="button" class=remove-button>X</button></li>`;
     
     todoInput.value = ""; 
     
