@@ -40,12 +40,13 @@ const allChecked = () => {
 
 // markChecked - negeren als er op de removebutton geklikt wordt, anders complete class toevoegen
 const markChecked = (e) => {
-    if (e.target.nodeName === "BUTTON") {
+    if (e.target.nodeName === "BUTTON" || e.target.nodeName === "UL") {
         return;
     } else {
         e.target.classList.toggle('complete');
+        allChecked();
     }
-    allChecked();
+    
 }
 
 

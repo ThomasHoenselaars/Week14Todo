@@ -8,6 +8,7 @@ html {
 
 body {
     margin: 0;
+    background:rgb(119, 136, 153, 0.2);
 }
 
 li {
@@ -17,11 +18,18 @@ li {
 .title {
     padding-top: 2rem;
     margin: 0;
+    background-color: lightskyblue;
+    color: rgb(95, 101, 107);
+
+}
+
+.top-row {
+    background-color: lightskyblue;
+
 }
 
 .todo-form {
     text-align: center;
-    background-color: lightskyblue;
 }
 
 .top-row {
@@ -53,10 +61,13 @@ li {
 
 .todo-list {
     padding: 0;
-    margin: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    max-width: 60rem;
 }
 
-.list-item {
+li {
     position: relative;
     background-color: rgb(119, 136, 153, 0.8);
     color: white;
@@ -64,14 +75,34 @@ li {
     text-align: left;
     padding: 2rem;
     list-style-type: none;
-    border: 1px solid black;
+    box-shadow: 1px 10px 20px -10px rgba(0,0,0,0.2);
+    border-radius: .5rem;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
+    margin: 1rem 1rem .2rem 1rem;
+
 }
 
 .list-item:hover {
     background-color: rgb(119, 136, 153);
+}
+
+.list-item:last-of-type {
+    opacity: 0;
+    animation: list-item-anim .3s forwards ease-out;
+
+}
+
+@keyframes list-item-anim {
+    from {
+        transform: translateX(-500%);
+        opacity: 0
+    }
+    to {
+        transform: translateX(0%);
+        opacity: 1;
+    }
 }
 
 .done {
