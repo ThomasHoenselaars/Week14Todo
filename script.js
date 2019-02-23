@@ -23,7 +23,7 @@ const addItem = () => {
 // removeItem - zoek event target - verwijder parent van event target
 const removeItem = (e) => {
     if(e.target && e.target.nodeName === "BUTTON") {
-    e.target.parentNode.remove();
+    e.target.closest('.list-item').remove();
     }
 };
 
@@ -32,21 +32,19 @@ const removeItem = (e) => {
 const allChecked = () => {
     if (todoList.children.length === 0) {
         console.log("There are no children");
-        return;
     } else if (todoList.children.length === todoList.querySelectorAll(".complete").length) {
         alert("You have completed all your to do's");
+        todoList.innerHTML = "";
     };
 };
 
 // markChecked - negeren als er op de removebutton geklikt wordt, anders complete class toevoegen
 const markChecked = (e) => {
     if (e.target.nodeName === "BUTTON" || e.target.nodeName === "UL") {
-        return;
-    } else {
-        e.target.classList.toggle('complete');
-        allChecked();
-    }
-    
+        return; 
+    } 
+    e.target.classList.toggle('complete');
+    allChecked();    
 }
 
 
@@ -57,7 +55,7 @@ addButton.addEventListener('click', addItem);
 todoList.addEventListener('click', removeItem);
 todoList.addEventListener('click', markChecked);
 
-todoInput.addEventListener('keydown', function (e) {
+todoInput.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') {
         addItem();
     }
